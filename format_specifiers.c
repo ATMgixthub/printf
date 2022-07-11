@@ -67,6 +67,6 @@ int unsigned_integer(va_list list)
 		return (print_unsgined_number(num));
 
 	if (num < 1)
-		return (-1)
-	return (print_unsgined_number(num))
+		return (-1);
+	return (print_unsgined_number(num));
 }
