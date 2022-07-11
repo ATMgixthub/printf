@@ -53,4 +53,4 @@ _printf("Integer: %d", integer);
 printf(1), _printf(2), printf(3), sprintf(), snprintf(), vsprintf(), vsnprintf().
 .SH BUGS
 
-Anokye Reis and Micah Addah - Participants of the ALX SE Program.
+Anokye Reis and Micah Addah - Participants of the ALX and Holberton SE Program.
