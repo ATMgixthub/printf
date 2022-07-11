@@ -188,6 +188,6 @@ int hex_check(int num, char x)
 	if (x == 'x')
 		return (hex[num]);
 	else
-		return (Hex[num])
-	return (0)
+		return (Hex[num]);
+	return (0);
 }
