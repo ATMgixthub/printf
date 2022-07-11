@@ -1,10 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
-<<<<<<< HEAD
-=======
 #include "main.h"
->>>>>>> 155f2893315d36fe6d188500a4a3eac659acf29e
 #include <stddef.h>
 
 /**
@@ -12,10 +9,7 @@
  * @format: string with format specifier
  * Return: number of characters printed
  */
-<<<<<<< HEAD
 
-=======
->>>>>>> 155f2893315d36fe6d188500a4a3eac659acf29e
 int _printf(const char *format, ...)
 {
 	if (format != NULL)
