@@ -1,47 +1,37 @@
 #include "main.h"
 
 /**
- * _printf - my printf
- * @format: input constant
- * Return: size of bufer (success) or -1 if fail
+ * _printf - Receives the main string and all the necessary parameters to
+ * print a formated string
+ * @format: A string containing all the desired characters
+ * Return: A total count of the characters printed
  */
 int _printf(const char *format, ...)
 {
-	if (format != NULL)
-	{
-		va_list argu;
-		unsigned int i;
+	int printed_chars;
+	conver_t f_list[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{"%", print_percent},
+		{"d", print_integer},
+		{"i", print_integer},
+		{"b", print_binary},
+		{"r", print_reversed},
+		{"R", rot13},
+		{"u", unsigned_integer},
+		{"o", print_octal},
+		{"x", print_hex},
+		{"X", print_heX},
+		{NULL, NULL}
+	};
+	va_list arg_list;
 
-		char *buf, *temp_str;
+	if (format == NULL)
+		return (-1);
 
-		va_start(argu, format);
-		buf = _calloc(2048, sizeof(char));
-
-		if (buf == NULL)
-			return (-1);
-
-		i = 0;
-		while (format && format[i] != 00)
-		{
-			if (format[0] == 37 && format[1] == 00)
-			{
-				return (-1);
-			}
-			i = _strncat(buf, format, i);
-			if (format[i] == 37)
-			{
-				i++;
-				temp_str = fntn(format[i], argu);
-				_strcat(buf, temp_str);
-			}
-			if (format[i] != 00)
-				i++;
-		}
-		i = _strlen(buf);
-		write(1, buf, i);
-		va_end(argu);
-		free(buf);
-		return (i);
-	}
-	return (-1);
+	va_start(arg_list, format);
+	/*Calling parser function*/
+	printed_chars = parser(format, f_list, arg_list);
+	va_end(arg_list);
+	return (printed_chars)
 }
